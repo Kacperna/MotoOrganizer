@@ -17,7 +17,7 @@
 
 
     <TextView
-        android:id="@+id/emptyText"
+        android:id="@+id/pustyTekst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Brak pojazdów. Dodaj pierwszy."
@@ -27,7 +27,7 @@
         android:layout_marginTop="40dp"/>
 
     <ListView
-        android:id="@+id/vehicleList"
+        android:id="@+id/pojazdyLista"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -35,7 +35,7 @@
 
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/dodajPojazd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dodaj pojazd"/>
