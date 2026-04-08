@@ -7,9 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,16 +30,14 @@ public class MainActivity extends AppCompatActivity {
         pojazdy = new ArrayList<>();
 
         updateUI();
-
         dodajPojazd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dodajPojazd = new Intent(MainActivity.this, AddVehicleActivity.class);
-                startActivity(dodajPojazd);
+                Intent intent = new Intent(MainActivity.this, AddVehicleActivity.class);
+                startActivityForResult(intent,1);
             }
         });
     }
-
     private void updateUI() {
         if (pojazdy.isEmpty()) {
             tekst.setVisibility(View.VISIBLE);
@@ -58,6 +54,25 @@ public class MainActivity extends AppCompatActivity {
 
             pojazdyLista.setAdapter(adapter);
             adapter.notifyDataSetChanged();
+        }
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+
+            String nazwa = data.getStringExtra("nazwa");
+            String przebieg = data.getStringExtra("przebieg");
+            String typ = data.getStringExtra("typ");
+
+            String pojazd = nazwa + " | " + przebieg + " km | " + typ;
+
+            pojazdy.add(pojazd);
+            updateUI();
         }
     }
 }
