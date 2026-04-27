@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Dane pojazdu -->
+    <TextView
+        android:id="@+id/nazwaTekst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nazwa" />
+
+    <TextView
+        android:id="@+id/przebiegTekst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Przebieg" />
+
+    <TextView
+        android:id="@+id/typTekst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Typ" />
+
+    <!-- NOWA LISTA AKTYWNOŚCI -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aktywności serwisowe:"
+        android:textStyle="bold"
+        android:paddingTop="12dp" />
+
+    <ListView
+        android:id="@+id/listaAktywnosci"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:dividerHeight="6dp" />
+
+    <!-- PRZYCISK DODAWANIA AKTYWNOŚCI -->
+    <Button
+        android:id="@+id/przyciskDodajAktywnosc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj aktywność"
+        android:padding="8dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- PRZYCISKI NA DOLE -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/wyjdz"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="wyjdź" />
+
+        <Button
+            android:id="@+id/zapisz"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="zapisz" />
+    </LinearLayout>
+
+</LinearLayout>
